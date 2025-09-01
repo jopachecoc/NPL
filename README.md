@@ -10,24 +10,57 @@ Joshua Triana
 
 Julio Morales
 
-<<<<<<< HEAD
-# Clasificación de Noticias en Español con LSTM
+# ENTREGA_3: Clasificación de Texto en Español con BERT y Hugging Face
+
+En esta entrega se implementa un clasificador de texto en español utilizando modelos pre-entrenados tipo BERT y la librería Hugging Face Transformers. El objetivo es especializar un modelo BERT en tareas de clasificación de sentimientos y noticias, aprovechando transfer learning y fine-tuning.
+
+## Flujo de trabajo
+
+1. **Carga y análisis exploratorio de datasets**
+
+   - Uso de datasets de Hugging Face como `pysentimiento/spanish-tweets` y `tweet_eval`.
+   - Estadísticas de longitud y distribución de clases.
+
+2. **Preprocesamiento y tokenización**
+
+   - Uso del tokenizador oficial del modelo BERT en español ([dccuchile/bert-base-spanish-wwm-cased](https://huggingface.co/dccuchile/bert-base-spanish-wwm-cased)).
+   - Conversión de textos a secuencias de tokens y máscaras de atención.
+
+3. **Preparación de datos**
+
+   - División en conjuntos de entrenamiento, validación y prueba.
+   - Conversión de etiquetas a IDs.
+
+4. **Definición y ajuste del modelo**
+
+   - Uso de `AutoModelForSequenceClassification` de Hugging Face.
+   - Entrenamiento como featurizer (congelando BERT) y fine-tuning (entrenando todo el modelo).
+   - Experimentación con diferentes cabezas de clasificación.
+
+5. **Entrenamiento y evaluación**
+   - Entrenamiento con la clase `Trainer` de Hugging Face.
+   - Monitoreo con TensorBoard.
+   - Evaluación de precisión y análisis de errores.
+
+## Resultados
+
+- Precisión superior al 90% en el conjunto de prueba usando fine-tuning.
+- El uso de modelos pre-entrenados reduce el tiempo de entrenamiento y mejora la calidad respecto a modelos desde cero.
+
+## Datasets utilizados
+
+- pysentimiento/spanish-tweets'
+
+## Ejecución
+
+Puedes ejecutar el notebook [tercera_entrega.ipynb](tercera_entrega.ipynb) localmente o en Google Colab:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jopachecoc/NPL/blob/main/tercera_entrega.ipynb)
+
+# ENTREGA 2: Clasificación de Noticias en Español con LSTM
 
 Este proyecto implementa un clasificador de noticias en español utilizando una red neuronal LSTM (Long Short-Term Memory) con PyTorch Lightning. El objetivo es categorizar titulares de noticias en cinco categorías: Deportes, Salud, Tecnología, Colombia y Economía.
 
-## Integrantes
-
-- Julio Morales
-- Joshua Triana
-- Jonathan Pacheco
-
-=======
-
-# ENTREGA_2: Clasificación de Noticias en Español con LSTM
-
-Este proyecto implementa un clasificador de noticias en español utilizando una red neuronal LSTM (Long Short-Term Memory) con PyTorch Lightning. El objetivo es categorizar titulares de noticias en cinco categorías: Deportes, Salud, Tecnología, Colombia y Economía.
-
->>>>>>> 98543ba955cb41d4fec4e173094789aeefda45a7
 ## Descripción
 
 Se utiliza un dataset de noticias reales del portal RCN, disponible en [Hugging Face Hub](https://huggingface.co/datasets/Nicky0007/titulos_noticias_rcn_clasificadas). El flujo de trabajo incluye:
@@ -81,11 +114,7 @@ pip install -r requerimientos.txt
 
 ## Ejecución
 
-<<<<<<< HEAD
 Puedes ejecutar el notebook [segundo_entrega.ipynb](segundo_entrega.ipynb) localmente o en Google Colab:
-=======
-Ejecutar el notebook [segundo_entrega.ipynb](segundo_entrega.ipynb) localmente o en Google Colab:
->>>>>>> 98543ba955cb41d4fec4e173094789aeefda45a7
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Ohtar10/icesi-nlp/blob/main/Sesion2/2-nlp-with-lstm.ipynb)
 
