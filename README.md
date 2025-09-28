@@ -18,64 +18,66 @@ Julio Morales
 
 ---
 
-## 📝 Descripción del Proyecto
+# PF_ChatGPT_RAG: Retrieval-Augmented Generation con Ollama y Langchain
 
-Este proyecto implementa un sistema de **Generación Aumentada por Recuperación (RAG)** utilizando el framework **LangChain** y el motor de modelos de lenguaje local **Ollama**.
+Este notebook implementa un sistema de RAG (Retrieval-Augmented Generation) usando modelos pre-entrenados, Ollama y LangChain, sobre un corpus de noticias en español. El objetivo es crear un chatbot capaz de responder preguntas utilizando información recuperada de los documentos.
 
-El objetivo es crear un sistema capaz de responder preguntas de manera precisa basándose exclusivamente en un **corpus de documentos externo** (en este caso, documentos de **Wikihow**), en lugar de la información con la que fue pre-entrenado el modelo. Esto permite generar respuestas más específicas, actualizadas y evitar alucinaciones.
+## Ejecución en Google Colab
 
-### 🛠️ Tecnologías Utilizadas
+Puedes ejecutar el notebook directamente en Google Colab usando el siguiente enlace:
 
-- **Ollama:** Motor para ejecutar modelos de lenguaje de código abierto de forma local.
-- **LangChain:** Framework para el desarrollo de aplicaciones impulsadas por modelos de lenguaje.
-- **Vector Stores (ChromaDB/FAISS):** Para almacenar y buscar incrustaciones vectoriales de los documentos.
-- **Modelos de Embeddings:** Para convertir el texto en vectores numéricos.
-- **Corpus:** Documentos de **Wikihow** en español.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jopachecoc/NPL/blob/main/PF_ChatGPT_RAG.ipynb)
 
----
+## Requisitos
 
-## 🚀 Instalación y Uso
+- GPU recomendada (T4 o superior)
+- El notebook instala automáticamente las dependencias necesarias (Ollama, LangChain, FAISS, Gradio, etc.)
 
-### 1. Requisitos Previos
+## Pasos principales del notebook
 
-- **GOOLE COOLAB:** Acceder a la plataforma y contar con usuario de google
+1. Instalación de dependencias y configuración de entorno
+2. Carga y exploración del dataset de noticias en español
+3. Indexación de documentos con FAISS y generación de embeddings
+4. Configuración de Ollama y LangChain para el modelo LLM
+5. Implementación de la cadena de recuperación y generación de respuestas
+6. Interfaz conversacional con Gradio
 
-* Maquina Local: Antes de ejecutar el notebook, asegúrate de tener instalado:
+## Notas
 
-- **Ollama:** Debe estar ejecutándose en tu máquina local o servidor.
-- **Docker** (Opcional, para un entorno más controlado).
+- No se requiere entrenamiento de modelos, solo se usan modelos pre-entrenados.
+- El corpus utilizado puede ser modificado, pero debe mantener una estructura similar.
+- El historial de conversación se maneja tanto en LangChain como en la interfaz de usuario.
 
-### 2. Ejecución
+## Referencias
 
-1.  **Clonar el repositorio** (Si aplica) o **Abrir el Notebook en Colab**.
-2.  **Instalar dependencias:** Ejecuta la celda de instalación de librerías (`pip install ...`).
-3.  **Configurar Ollama:** Asegúrate de que el modelo de lenguaje (ej. `llama2`, `mistral`, etc., según el notebook) esté descargado y accesible por el sistema.
-4.  **Ejecutar celdas:** Sigue el flujo del notebook:
-    - Carga de documentos de Wikihow.
-    - Creación de `TextSplitter` para dividir el texto.
-    - Generación y almacenamiento de embeddings en la Vector Store.
-    - Configuración del **Chain de LangChain** (ej. `RetrievalQA`).
-    - Realización de consultas de prueba.
+- [LangChain](https://www.langchain.com)
+- [Ollama](https://ollama.com)
+- [FAISS](https://github.com/facebookresearch/faiss)
+- [Gradio](https://gradio.app)
 
----
+## Evidencias de ejecución
 
-## 📊 Resultados y Evidencia
+A continuación se muestran ejemplos de la ejecución del notebook `PF_ChatGPT_RAG.ipynb` en Google Colab, donde se observa el funcionamiento del chatbot con RAG y LangChain:
 
-Las siguientes imágenes demuestran la correcta ejecución y el funcionamiento del sistema RAG, mostrando la configuración de las cadenas, la recuperación de documentos y la respuesta final generada por el modelo.
+### Ejemplo 1: Inicio y carga del sistema
 
-![Configuración de la cadena LangChain y muestra de la recuperación de documentos relevantes para una consulta.]
-
-### Ejecución de Consulta y Respuesta Generada
-
-![Ejemplo de una consulta de prueba, mostrando el prompt final enviado al LLM y la respuesta precisa basada en los documentos de Wikihow.](IMG1ChB2.jpg)
-
-### Vista Detallada de la Respuesta (Evidencia Adicional)
-
-![Evidencia detallada de una respuesta generada por el modelo, confirmando la aplicación de la información del contexto recuperado.](IMG1ChB3.jpg) (IMG1ChB1.jpg)
+![Evidencia 1: Inicio y carga del sistema](IMG1ChB1.jpg)
 
 ---
 
+### Ejemplo 2: Pregunta al chatbot y recuperación de contexto
+
+![Evidencia 2: Pregunta al chatbot y recuperación de contexto](IMG1ChB2.jpg)
+
 ---
+
+### Ejemplo 3: Respuesta generada y referencias a documentos
+
+![Evidencia 3: Respuesta generada y referencias a documentos](IMG1ChB3.jpg)
+
+---
+
+## Estas imágenes muestran el flujo completo: desde la carga del sistema, la interacción con el chatbot, hasta la generación de respuestas con referencias a los documentos recuperados del corpus.
 
 # ENTREGA_3: Clasificación de Texto en Español con BERT y Hugging Face
 
