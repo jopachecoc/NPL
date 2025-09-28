@@ -10,6 +10,73 @@ Joshua Triana
 
 Julio Morales
 
+# Proyecto Final crear tu propio ChatGPT usando un RAG
+
+# 📰 Retrieval-Augmented Generation (RAG) con Ollama y Langchain
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/jopachecoc/NPL/blob/main/PF_ChatGPT_RAG.ipynb)
+
+---
+
+## 📝 Descripción del Proyecto
+
+Este proyecto implementa un sistema de **Generación Aumentada por Recuperación (RAG)** utilizando el framework **LangChain** y el motor de modelos de lenguaje local **Ollama**.
+
+El objetivo es crear un sistema capaz de responder preguntas de manera precisa basándose exclusivamente en un **corpus de documentos externo** (en este caso, documentos de **Wikihow**), en lugar de la información con la que fue pre-entrenado el modelo. Esto permite generar respuestas más específicas, actualizadas y evitar alucinaciones.
+
+### 🛠️ Tecnologías Utilizadas
+
+- **Ollama:** Motor para ejecutar modelos de lenguaje de código abierto de forma local.
+- **LangChain:** Framework para el desarrollo de aplicaciones impulsadas por modelos de lenguaje.
+- **Vector Stores (ChromaDB/FAISS):** Para almacenar y buscar incrustaciones vectoriales de los documentos.
+- **Modelos de Embeddings:** Para convertir el texto en vectores numéricos.
+- **Corpus:** Documentos de **Wikihow** en español.
+
+---
+
+## 🚀 Instalación y Uso
+
+### 1. Requisitos Previos
+
+- **GOOLE COOLAB:** Acceder a la plataforma y contar con usuario de google
+
+* Maquina Local: Antes de ejecutar el notebook, asegúrate de tener instalado:
+
+- **Ollama:** Debe estar ejecutándose en tu máquina local o servidor.
+- **Docker** (Opcional, para un entorno más controlado).
+
+### 2. Ejecución
+
+1.  **Clonar el repositorio** (Si aplica) o **Abrir el Notebook en Colab**.
+2.  **Instalar dependencias:** Ejecuta la celda de instalación de librerías (`pip install ...`).
+3.  **Configurar Ollama:** Asegúrate de que el modelo de lenguaje (ej. `llama2`, `mistral`, etc., según el notebook) esté descargado y accesible por el sistema.
+4.  **Ejecutar celdas:** Sigue el flujo del notebook:
+    - Carga de documentos de Wikihow.
+    - Creación de `TextSplitter` para dividir el texto.
+    - Generación y almacenamiento de embeddings en la Vector Store.
+    - Configuración del **Chain de LangChain** (ej. `RetrievalQA`).
+    - Realización de consultas de prueba.
+
+---
+
+## 📊 Resultados y Evidencia
+
+Las siguientes imágenes demuestran la correcta ejecución y el funcionamiento del sistema RAG, mostrando la configuración de las cadenas, la recuperación de documentos y la respuesta final generada por el modelo.
+
+![Configuración de la cadena LangChain y muestra de la recuperación de documentos relevantes para una consulta.]
+
+### Ejecución de Consulta y Respuesta Generada
+
+![Ejemplo de una consulta de prueba, mostrando el prompt final enviado al LLM y la respuesta precisa basada en los documentos de Wikihow.](IMG1ChB2.jpg)
+
+### Vista Detallada de la Respuesta (Evidencia Adicional)
+
+![Evidencia detallada de una respuesta generada por el modelo, confirmando la aplicación de la información del contexto recuperado.](IMG1ChB3.jpg) (IMG1ChB1.jpg)
+
+---
+
+---
+
 # ENTREGA_3: Clasificación de Texto en Español con BERT y Hugging Face
 
 En esta entrega se implementa un clasificador de texto en español utilizando modelos pre-entrenados tipo BERT y la librería Hugging Face Transformers. El objetivo es especializar un modelo BERT en tareas de clasificación de sentimientos y noticias, aprovechando transfer learning y fine-tuning.
