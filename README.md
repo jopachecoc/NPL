@@ -14,7 +14,7 @@ Julio Morales
 
 # 📰 Retrieval-Augmented Generation (RAG) con Ollama y Langchain
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/jopachecoc/NPL/blob/main/PF_ChatGPT_RAG.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/jopachecoc/NPL/blob/main/PF_ChatGPT_RAG.ipynb) PF_ChatGPT_RAG.ipynb
 
 ---
 
